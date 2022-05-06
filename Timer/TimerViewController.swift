@@ -30,6 +30,12 @@ final class TimerViewController: UIViewController {
     }
     
     @IBAction func timerButtonTapped(_ sender: UIButton) {
+        
+        guard checkUserInput() else {
+            alertWarning()
+            return
+        }
+        
         guard let buttonTitle = sender.currentTitle else {
             return
         }
@@ -92,5 +98,15 @@ final class TimerViewController: UIViewController {
     private func stopTimer() {
         timer?.invalidate()
         timer = nil
+    }
+    
+    private func checkUserInput() -> Bool {
+        timeRemaining == 0 ? false : true
+    }
+    
+    private func alertWarning() {
+        let alert = UIAlertController(title: "경고", message: "초를 선택해주세요", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "확인", style: .default))
+        present(alert, animated: true)
     }
 }
