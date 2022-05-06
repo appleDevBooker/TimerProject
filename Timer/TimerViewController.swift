@@ -30,7 +30,6 @@ final class TimerViewController: UIViewController {
     }
     
     @IBAction func timerButtonTapped(_ sender: UIButton) {
-        
         guard checkUserInput() else {
             alertWarning()
             return
