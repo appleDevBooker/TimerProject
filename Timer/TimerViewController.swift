@@ -27,20 +27,8 @@ final class TimerViewController: UIViewController {
         number = Int(sender.value)
         mainLabel.text = "\(number) 초"
     }
-    @IBAction func startButtonTapped(_ sender: UIButton) {
-        timer?.invalidate()
-        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: { [self] _ in
-            if number > 0 {
-                number -= 1
-                slider.value = Float(number)
-                mainLabel.text = "\(number) 초"
-            } else {
-                timer?.invalidate()
-                number = 0
-                AudioServicesPlayAlertSound(1322)
-                configureUI()
-            }
-        })
+    @IBAction func timerButtonTapped(_ sender: UIButton) {
+        startTimer()
     }
     @IBAction func resetButtonTapped(_ sender: UIButton) {
         configureUI()
@@ -56,5 +44,21 @@ final class TimerViewController: UIViewController {
         slider.setValue(30.0, animated: true)
         number = 0
         timer = nil
+    }
+    
+    private func startTimer() {
+        timer?.invalidate()
+        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: { [self] _ in
+            if number > 0 {
+                number -= 1
+                slider.value = Float(number)
+                mainLabel.text = "\(number) 초"
+            } else {
+                timer?.invalidate()
+                number = 0
+                AudioServicesPlayAlertSound(1322)
+                configureUI()
+            }
+        })
     }
 }
