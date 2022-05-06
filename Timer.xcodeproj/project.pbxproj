@@ -42,7 +42,7 @@
 		891D19312805A9B80020FE75 = {
 			isa = PBXGroup;
 			children = (
-				891D193C2805A9B80020FE75 /* FirstNewApp */,
+				891D193C2805A9B80020FE75 /* Timer */,
 				891D193B2805A9B80020FE75 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -55,7 +55,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		891D193C2805A9B80020FE75 /* FirstNewApp */ = {
+		891D193C2805A9B80020FE75 /* Timer */ = {
 			isa = PBXGroup;
 			children = (
 				891D193D2805A9B80020FE75 /* AppDelegate.swift */,
@@ -67,7 +67,6 @@
 				891D19482805A9BA0020FE75 /* LaunchScreen.storyboard */,
 				891D194B2805A9BA0020FE75 /* Info.plist */,
 			);
-			name = FirstNewApp;
 			path = Timer;
 			sourceTree = "<group>";
 		};

@@ -28,6 +28,7 @@ final class TimerViewController: UIViewController {
         timeRemaining = Int(sender.value)
         mainLabel.text = "\(timeRemaining) 초"
     }
+    
     @IBAction func timerButtonTapped(_ sender: UIButton) {
         guard let buttonTitle = sender.currentTitle else {
             return
@@ -41,6 +42,7 @@ final class TimerViewController: UIViewController {
         
         toggleTimerButtonTitle(buttonTitle: buttonTitle)
     }
+    
     @IBAction func resetButtonTapped(_ sender: UIButton) {
         configureUI()
     }
