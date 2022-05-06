@@ -51,11 +51,11 @@ final class TimerViewController: UIViewController {
     }
     
     private func configureUI() {
+        stopTimer()
         mainLabel.text = "초를 선택하세요"
         timerButton.setTitle(K.ButtonTitle.start, for: .normal)
         slider.setValue(30.0, animated: true)
         timeRemaining = 0
-        timer = nil
     }
     
     private func toggleTimerButtonTitle(buttonTitle: String) {
@@ -89,5 +89,6 @@ final class TimerViewController: UIViewController {
     
     private func stopTimer() {
         timer?.invalidate()
+        timer = nil
     }
 }
