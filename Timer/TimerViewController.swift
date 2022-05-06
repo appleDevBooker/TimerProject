@@ -21,7 +21,7 @@ final class TimerViewController: UIViewController {
         super.viewDidLoad()
         
         configureSlider()
-        configureUI()
+        initialezeUI()
     }
     
     @IBAction func sliderChanged(_ sender: UISlider) {
@@ -44,7 +44,7 @@ final class TimerViewController: UIViewController {
     }
     
     @IBAction func resetButtonTapped(_ sender: UIButton) {
-        configureUI()
+        initialezeUI()
     }
     
     private func configureSlider() {
@@ -52,7 +52,7 @@ final class TimerViewController: UIViewController {
         slider.maximumValue = 60.0
     }
     
-    private func configureUI() {
+    private func initialezeUI() {
         stopTimer()
         mainLabel.text = "초를 선택하세요"
         timerButton.setTitle(K.ButtonTitle.start, for: .normal)
@@ -85,7 +85,7 @@ final class TimerViewController: UIViewController {
             timer?.invalidate()
             timeRemaining = 0
             AudioServicesPlayAlertSound(1322)
-            configureUI()
+            initialezeUI()
         }
     }
     
